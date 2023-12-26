@@ -10,7 +10,7 @@
             window.webkit.messageHandlers.bridge.postMessage(message)
         }
         function showAlert(text) {
-            alert(text);
+            document.body.innerHTML += '<div>' + text + '</div>';
         }
     </script>
   
