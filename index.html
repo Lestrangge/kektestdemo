@@ -16,10 +16,10 @@
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб с задержкой
         function testLoadData() {
-            window.webkit.messageHandlers.testLoadData.postMessage('testGetValue')
+            window.webkit.messageHandlers.testLoadData.postMessage('testSetValue')
         }
         /// Вывод на страничку
-        function testGetValue(text) {
+        function testSetValue(text) {
             document.body.innerHTML += '<div>' + text + '</div>';
         }
     </script>
@@ -27,8 +27,8 @@
 
 <body>
     <input type="button" value="Testy test" onclick="testShowToast('Hello World')" />
-    <input type="button" value="Testy test" onclick="showText('showText')" />
-    <input type="button" value="Testy test" onclick="testLoadData('testLoadData')" />
+    <input type="button" value="Testy test" onclick="testGetValue()" />
+    <input type="button" value="Testy test" onclick="testLoadData()" />
 </body>
  
 </html>
