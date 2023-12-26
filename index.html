@@ -6,29 +6,22 @@
     <title>Document</title>
 
     <script>
-        function postSomeMessage(message) {
+        /// вызывает отображение нативного компонента alert с переданным текстом сообщения message (при отображении добавится префикс "MLK-IOS-App:")
+        function testShowToast(message) {
             window.webkit.messageHandlers.bridge.postMessage(message)
         }
-        function showAlert(text) {
+        /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб без задержек
+        function showText(text) {
             document.body.innerHTML += '<div>' + text + '</div>';
         }
+        /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб с задержкой
+        function testLoadData(callback) {
+            document.body.innerHTML += '<div>' + callback + '</div>';
+        }
     </script>
-  
 </head>
 
 <body>
     <input type="button" value="Testy test" 
-onclick="postSomeMessage('Tosty tost')">
-    <input type="button" value="Press me to send true" 
-onclick="postSomeMessage(false)">
-    <input type="button" value="Press me to send false" 
-onclick="postSomeMessage(true)">
-    <input type="button" value="Press me to send [0,1,2,3]" 
-onclick="postSomeMessage([0,1,2,3])">
-    <input type="button" value="Press me to send {key: value}" 
-onclick="postSomeMessage({name: 'value'})">
-    <input type="button" value="Press me to send null" 
-onclick="postSomeMessage(null)">
-    <input type="button" value="Press me to send undefined" 
-onclick="postSomeMessage(undefined)">
+onclick="postSomeMessage('Testy test')">
 </body>
