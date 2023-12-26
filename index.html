@@ -6,22 +6,29 @@
     <title>Document</title>
 
     <script>
-        /// вызывает отображение нативного компонента alert с переданным текстом сообщения message (при отображении добавится префикс "MLK-IOS-App:")
+        /// Вызывает отображение нативного компонента alert с переданным текстом сообщения message (при отображении добавится префикс "MLK-IOS-App:")
         function testShowToast(message) {
-            window.webkit.messageHandlers.bridge.postMessage(message)
+            window.webkit.messageHandlers.testShowToast.postMessage(message)
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб без задержек
-        function showText(text) {
-            document.body.innerHTML += '<div>' + text + '</div>';
+        function testGetValue() {
+            window.webkit.messageHandlers.testGetValue.postMessage()
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб с задержкой
-        function testLoadData(callback) {
-            document.body.innerHTML += '<div>' + callback + '</div>';
+        function testLoadData() {
+            window.webkit.messageHandlers.testLoadData.postMessage('testGetValue')
+        }
+        /// Вывод на страничку
+        function testGetValue(text) {
+            document.body.innerHTML += '<div>' + text + '</div>';
         }
     </script>
 </head>
 
 <body>
-    <input type="button" value="Testy test" 
-onclick="postSomeMessage('Testy test')">
+    <input type="button" value="Testy test" onclick="testShowToast('Hello World')" />
+    <input type="button" value="Testy test" onclick="showText('showText')" />
+    <input type="button" value="Testy test" onclick="testLoadData('testLoadData')" />
 </body>
+ 
+</html>
