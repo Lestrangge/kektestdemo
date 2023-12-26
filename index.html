@@ -10,10 +10,17 @@
             window.webkit.messageHandlers.bridge.postMessage(message)
         }
     </script>
+
+    <script>
+        function showAlert(text) {
+            alert (text);
+        }
+    </script>
+  
 </head>
 
 <body>
-    <input type="button" value="'Testy test'" 
+    <input type="button" value="Testy test" 
 onclick="postSomeMessage('Testy test')">
     <input type="button" value="Press me to send true" 
 onclick="postSomeMessage(true)">
@@ -22,7 +29,7 @@ onclick="postSomeMessage(false)">
     <input type="button" value="Press me to send [0,1,2,3]" 
 onclick="postSomeMessage([0,1,2,3])">
     <input type="button" value="Press me to send {key: value}" 
-onclick="postSomeMessage({key: 'value'})">
+onclick="postSomeMessage({name: 'value'})">
     <input type="button" value="Press me to send null" 
 onclick="postSomeMessage(null)">
     <input type="button" value="Press me to send undefined" 
