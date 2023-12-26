@@ -7,7 +7,7 @@
 
     <script>
         function postSomeMessage(message) {
-            window.webkit.messageHandlers.headerInfo.postMessage(message)
+            window.webkit.messageHandlers.bridge.postMessage(message)
         }
     </script>
 </head>
