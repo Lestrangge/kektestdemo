@@ -12,7 +12,7 @@
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб без задержек
         function testGetValue() {
-            window.webkit.messageHandlers.testGetValue.postMessage()
+            window.webkit.messageHandlers.testGetValue.postMessage(null)
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб с задержкой
         function testLoadData() {
