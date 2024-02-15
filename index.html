@@ -7,8 +7,8 @@
 
     <script>
         /// Вызывает отображение нативного компонента alert с переданным текстом сообщения message (при отображении добавится префикс "MLK-IOS-App:")
-        function testShowAlert(message) {
-            window.webkit.messageHandlers.testShowAlert.postMessage(message)
+        function setWidgetConfig(message) {
+            window.webkit.messageHandlers.setWidgetConfig.postMessage(message)
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб без задержек
         function testGetValue() {
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <input type="button" value="testShowAlert" onclick="testShowAlert('Hello World')">
+   <input type="button" value="setWidgetConfig" onclick="setWidgetConfig({voice: {discountId:'1020793', optionId: 'unf'}})">
     <input type="button" value="testGetValue" onclick="testGetValue()">
     <input type="button" value="testLoadData" onclick="testLoadData()">
 </body>
