@@ -8,7 +8,7 @@
     <script>
         /// Вызывает отображение нативного компонента alert с переданным текстом сообщения message (при отображении добавится префикс "MLK-IOS-App:")
         function setWidgetConfig(message) {
-            window.webkit.messageHandlers.setWidgetConfig.postMessage(message)
+            window.webkit.messageHandlers.setWidgetConfig.postMessage(JSON.stringify(message))
         }
         /// Отдаёт строку 'Value from MLK-IOS-App' из натива в веб без задержек
         function testGetValue() {
