@@ -32,11 +32,11 @@
         }
 
         function openLink() {
-            window.webkit.messageHandlers.openLink.postMessage(null)
+            window.webkit.messageHandlers.openLink.postMessage(JSON.stringify({"link": "https://support.apple.com/ru-ru"}))
         }
 
         function getColorTheme() {
-            window.webkit.messageHandlers.getColorTheme.postMessage('{"systemColor": "DARK", "userThemeChoice": "DARK"}')
+            window.webkit.messageHandlers.getColorTheme.postMessage(JSON.stringify({"systemColor": "DARK", "userThemeChoice": "DARK"}))
         }
 
         function setColorTheme() {
