@@ -22,6 +22,26 @@
         function testSetValue(text) {
             document.body.innerHTML += '<div>' + text + '</div>';
         }
+
+        function openContacts() {
+            window.webkit.messageHandlers.openContacts.postMessage()
+        }
+
+        function openAppSettings() {
+            window.webkit.messageHandlers.openAppSettings.postMessage()
+        }
+
+        function openLink() {
+            window.webkit.messageHandlers.openContacts.openLink()
+        }
+
+        function getColorTheme() {
+            window.webkit.messageHandlers.getColorTheme.postMessage('{"systemColor": "DARK", "userThemeChoice": "DARK"}')
+        }
+
+        function setColorTheme() {
+            window.webkit.messageHandlers.getColorTheme.postMessage('DARK')
+        }
     </script>
 </head>
 
@@ -37,6 +57,12 @@
         })">
     <input type="button" value="testGetValue" onclick="testGetValue()">
     <input type="button" value="testLoadData" onclick="testLoadData()">
+
+    <input type="button" value="openContacts" onclick="openContacts()">
+    <input type="button" value="openAppSettings" onclick="openAppSettings()">
+    <input type="button" value="openLink" onclick="openLink()">
+    <input type="button" value="getColorTheme" onclick="getColorTheme()">
+    <input type="button" value="setColorTheme" onclick="setColorTheme()">
 </body>
  
 </html>
