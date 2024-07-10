@@ -24,15 +24,15 @@
         }
 
         function openContacts() {
-            window.webkit.messageHandlers.openContacts.postMessage()
+            window.webkit.messageHandlers.openContacts.postMessage(null)
         }
 
         function openAppSettings() {
-            window.webkit.messageHandlers.openAppSettings.postMessage()
+            window.webkit.messageHandlers.openAppSettings.postMessage(null)
         }
 
         function openLink() {
-            window.webkit.messageHandlers.openContacts.openLink()
+            window.webkit.messageHandlers.openLink.postMessage(null)
         }
 
         function getColorTheme() {
@@ -40,7 +40,7 @@
         }
 
         function setColorTheme() {
-            window.webkit.messageHandlers.getColorTheme.postMessage('DARK')
+            window.webkit.messageHandlers.setColorTheme.postMessage('DARK')
         }
     </script>
 </head>
