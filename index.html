@@ -36,7 +36,7 @@
         }
 
         function getColorTheme(message) {
-            window.webkit.messageHandlers.getColorTheme.postMessage(JSON.stringify(message))
+            window.webkit.messageHandlers.getColorTheme.postMessage('getColorTheme')
         }
 
         function setColorTheme() {
