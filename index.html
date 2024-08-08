@@ -24,7 +24,7 @@
         }
 
         function openContacts() {
-            window.webkit.messageHandlers.openContacts.postMessage(null)
+            window.webkit.messageHandlers.openContacts
         }
 
         function openAppSettings() {
@@ -36,7 +36,7 @@
         }
 
         function getColorTheme(message) {
-            window.webkit.messageHandlers.getColorTheme.postMessage('getColorTheme')
+            window.webkit.messageHandlers.getColorTheme.postMessage('getColorThemeCallback')
         }
 
         function setColorTheme() {
