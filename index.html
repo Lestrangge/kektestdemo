@@ -23,7 +23,7 @@
         }
 
         function openContacts() {
-            window.webkit.messageHandlers.openContacts
+            window.webkit.messageHandlers.openContacts.postMessage(null)
         }
 
         function openAppSettings() {
@@ -34,7 +34,7 @@
             window.webkit.messageHandlers.openLink.postMessage(JSON.stringify(message))
         }
 
-        function getColorTheme(message) {
+        function getColorTheme() {
             window.webkit.messageHandlers.getColorTheme.postMessage('getColorThemeCallback')
         }
 
@@ -60,7 +60,7 @@
     <input type="button" value="openContacts" onclick="openContacts()">
     <input type="button" value="openAppSettings" onclick="openAppSettings()">
     <input type="button" value="openLink" onclick="openLink({ link: 'https://support.apple.com/ru-ru' })">
-    <input type="button" value="getColorTheme" onclick="getColorTheme({ systemColor: 'DARK', userThemeChoice: 'DARK' })">
+    <input type="button" value="getColorTheme" onclick="getColorTheme()">
     <input type="button" value="setColorTheme" onclick="setColorTheme()">
 </body>
  
