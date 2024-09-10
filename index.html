@@ -41,6 +41,10 @@
         function setColorTheme() {
             window.webkit.messageHandlers.setColorTheme.postMessage('DARK')
         }
+
+        function logout() {
+            window.webkit.messageHandlers.logout.postMessage(null)
+        }
     </script>
 </head>
 
@@ -62,6 +66,7 @@
     <input type="button" value="openLink" onclick="openLink({ link: 'https://support.apple.com/ru-ru' })">
     <input type="button" value="getColorTheme" onclick="getColorTheme()">
     <input type="button" value="setColorTheme" onclick="setColorTheme()">
+    <input type="button" value="logout" onclick="logout()">
 </body>
  
 </html>
