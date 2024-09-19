@@ -27,7 +27,7 @@
         }
 
         function openAppSettings() {
-            window.webkit.messageHandlers.setAppData.postMessage(null)
+            window.webkit.messageHandlers.openAppSettings.postMessage(null)
         }
 
         function openLink(message) {
@@ -45,6 +45,11 @@
         function logout() {
             window.webkit.messageHandlers.disableWebMode.postMessage(null)
         }
+
+        function setAppData() {
+            window.webkit.messageHandlers.setAppData.postMessage('setAppDataCallback')
+        }
+
     </script>
 </head>
 
@@ -67,6 +72,7 @@
     <input type="button" value="getColorTheme" onclick="getColorTheme()">
     <input type="button" value="setColorTheme" onclick="setColorTheme()">
     <input type="button" value="logout" onclick="logout()">
+    <input type="button" value="setAppData" onclick="setAppData()">
 </body>
  
 </html>
