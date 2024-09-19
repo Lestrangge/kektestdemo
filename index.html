@@ -50,6 +50,10 @@
             window.webkit.messageHandlers.setAppData.postMessage('setAppDataCallback')
         }
 
+        function webLoadingCompleted() {
+            window.webkit.messageHandlers.webLoadingCompleted.postMessage('setAppDataCallback')
+        }
+
     </script>
 </head>
 
@@ -73,6 +77,7 @@
     <input type="button" value="setColorTheme" onclick="setColorTheme()">
     <input type="button" value="logout" onclick="logout()">
     <input type="button" value="setAppData" onclick="setAppData()">
+    <input type="button" value="webLoadingCompleted" onclick="webLoadingCompleted()">
 </body>
  
 </html>
