@@ -54,6 +54,9 @@
             window.webkit.messageHandlers.webLoadingCompleted.postMessage('setAppDataCallback')
         }
 
+        function setStatusBarColor(message) {
+            window.webkit.messageHandlers.setStatusBarColor.postMessage(JSON.stringify(message))
+        }
     </script>
 </head>
 
@@ -78,6 +81,12 @@
     <input type="button" value="logout" onclick="logout()">
     <input type="button" value="setAppData" onclick="setAppData()">
     <input type="button" value="webLoadingCompleted" onclick="webLoadingCompleted()">
+    <input type="button" value="setStatusBarColor" onclick="setStatusBarColor( {
+            settings: {
+                color:'1020793', 
+                iconsLight: true
+            }
+        })">
 </body>
  
 </html>
