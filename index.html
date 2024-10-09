@@ -61,6 +61,14 @@
         function openBankLink(message) {
             window.webkit.messageHandlers.openBankLink.postMessage(JSON.stringify(message))
         }
+
+        function callbackName(value) {
+            if (value == true) {
+                window.webkit.messageHandlers.openAppSettings.postMessage(null)
+            } else {
+                window.webkit.messageHandlers.openContacts.postMessage(null)
+            }
+        }
     </script>
 </head>
 
